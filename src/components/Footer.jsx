@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SITE_CONFIG } from '../config/siteConfig';
+import { SITE_CONFIG, getAssetUrl } from '../config/siteConfig';
 import '../styles/footer.css';
 
 export default function Footer() {
@@ -13,12 +13,12 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="footer-brand">
             <img 
-              src="/images/logo-orange-blue-plain.jpg" 
+              src={getAssetUrl('/images/logo-orange-blue-plain.jpg')} 
               alt={SITE_CONFIG.companyName} 
               className="footer-logo"
               onError={(e) => {
                 e.currentTarget.onerror = null;
-                e.currentTarget.src = '/images/logo-app-icon.jpg';
+                e.currentTarget.src = getAssetUrl('/images/logo-app-icon.jpg');
               }}
             />
             <p className="footer-desc">

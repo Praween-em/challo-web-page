@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SITE_CONFIG } from '../config/siteConfig';
+import { SITE_CONFIG, getAssetUrl } from '../config/siteConfig';
 import SEO from '../components/SEO';
 
 export default function About() {
@@ -62,12 +62,12 @@ export default function About() {
             <div>
               <div style={{ borderRadius: 'var(--radius-xl)', overflow: 'hidden', boxShadow: 'var(--shadow-xl)' }}>
                 <img 
-                  src="/images/promo-challo-brand.jpg" 
+                  src={getAssetUrl('/images/promo-challo-brand.jpg')} 
                   alt="Challo Platform Brand" 
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = '/images/services-overview.jpg';
+                    e.currentTarget.src = getAssetUrl('/images/services-overview.jpg');
                   }}
                 />
               </div>
@@ -131,12 +131,12 @@ export default function About() {
             <div style={{ order: 1 }}>
               <div style={{ borderRadius: 'var(--radius-xl)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
                 <img 
-                  src="/images/promo-franchise.jpg" 
+                  src={getAssetUrl('/images/promo-franchise.jpg')} 
                   alt="Challo Leadership and Operations" 
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = '/images/services-overview.jpg';
+                    e.currentTarget.src = getAssetUrl('/images/services-overview.jpg');
                   }}
                 />
               </div>

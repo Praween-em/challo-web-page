@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { SITE_CONFIG } from '../config/siteConfig';
+import { SITE_CONFIG, getAssetUrl } from '../config/siteConfig';
 import '../styles/navbar.css';
 
 export default function Navbar() {
@@ -24,11 +24,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             <img 
-              src="/images/logo-orange-blue-plain.jpg" 
+              src={getAssetUrl('/images/logo-orange-blue-plain.jpg')} 
               alt={`${SITE_CONFIG.companyName} Logo`}
               onError={(e) => {
                 e.currentTarget.onerror = null;
-                e.currentTarget.src = '/images/logo-app-icon.jpg';
+                e.currentTarget.src = getAssetUrl('/images/logo-app-icon.jpg');
               }} 
             />
           </Link>

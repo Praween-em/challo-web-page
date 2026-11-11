@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SITE_CONFIG } from '../config/siteConfig';
+import { SITE_CONFIG, getAssetUrl } from '../config/siteConfig';
 import SEO from '../components/SEO';
 import '../styles/home.css';
 
@@ -9,7 +9,7 @@ export default function Home() {
     {
       title: 'Bike Taxi',
       icon: '🛵',
-      image: '/images/service-bike.jpg',
+      image: getAssetUrl('/images/service-bike.jpg'),
       tagline: 'Beat Traffic & Save Time',
       description: 'Quickest and most cost-effective commute for solo travellers navigating crowded city roads with verified helmet-equipped captains.',
       features: ['Fast traffic bypass', 'Pocket-friendly fares', 'Live GPS tracking']
@@ -17,7 +17,7 @@ export default function Home() {
     {
       title: 'Auto Taxi',
       icon: '🛺',
-      image: '/images/service-auto.jpg',
+      image: getAssetUrl('/images/service-auto.jpg'),
       tagline: 'The Everyday Family Ride',
       description: 'Reliable, spacious three-wheeler rides right at your doorstep. Transparent digital meter pricing with zero surge surprises.',
       features: ['Spacious 3-seater comfort', 'Doorstep pickup', 'Meter-based honesty']
@@ -25,7 +25,7 @@ export default function Home() {
     {
       title: 'Car Taxi',
       icon: '🚗',
-      image: '/images/service-car.jpg',
+      image: getAssetUrl('/images/service-car.jpg'),
       tagline: 'Comfort & Climate Control',
       description: 'AC hatchbacks, sedans, and SUVs for daily office commutes, family outings, and outstation trips with courteous drivers.',
       features: ['Air-conditioned comfort', 'Multiple vehicle tiers', 'Luggage capacity']
@@ -33,7 +33,7 @@ export default function Home() {
     {
       title: 'Ambulance Service',
       icon: '🚑',
-      image: '/images/service-ambulance.jpg',
+      image: getAssetUrl('/images/service-ambulance.jpg'),
       tagline: 'Emergency Medical Response',
       description: 'Dedicated emergency medical transport ready 24/7 to connect patients promptly to hospitals with prioritized support and transparent rates.',
       features: ['24/7 Rapid response', 'Zero commission driver model', 'Hospital coordination']
@@ -134,11 +134,11 @@ export default function Home() {
             <div className="hero-visual">
               <div className="hero-image-wrap">
                 <img 
-                  src="/images/promo-hero-1.jpg" 
+                  src={getAssetUrl('/images/promo-hero-1.jpg')} 
                   alt="Challo Quick & Affordable Rides"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = '/images/promo-hero-2.jpg';
+                    e.currentTarget.src = getAssetUrl('/images/promo-hero-2.jpg');
                   }}
                 />
               </div>
@@ -172,11 +172,11 @@ export default function Home() {
           <div className="about-preview-inner">
             <div className="about-preview-image">
               <img 
-                src="/images/promo-features.jpg" 
+                src={getAssetUrl('/images/promo-features.jpg')} 
                 alt="Challo Passenger and Driver Safety" 
                 onError={(e) => {
                   e.currentTarget.onerror = null;
-                  e.currentTarget.src = '/images/services-overview.jpg';
+                  e.currentTarget.src = getAssetUrl('/images/services-overview.jpg');
                 }}
               />
               <div className="about-preview-badge-wrap">
@@ -365,11 +365,11 @@ export default function Home() {
             <div className="app-download-visual">
               <div className="app-mockup-wrap">
                 <img 
-                  src="/images/app-mockup.jpg" 
+                  src={getAssetUrl('/images/app-mockup.jpg')} 
                   alt="Challo Mobile App Interface" 
                   onError={(e) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = '/images/promo-bike-ride.jpg';
+                    e.currentTarget.src = getAssetUrl('/images/promo-bike-ride.jpg');
                   }}
                 />
               </div>
